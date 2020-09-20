@@ -3,7 +3,6 @@ package com.example.sweater.demo.controller;
 import com.example.sweater.demo.domain.Role;
 import com.example.sweater.demo.domain.User;
 import com.example.sweater.demo.repository.UserRepo;
-import org.hibernate.mapping.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
