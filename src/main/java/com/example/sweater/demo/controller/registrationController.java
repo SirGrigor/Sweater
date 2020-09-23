@@ -17,22 +17,23 @@ public class registrationController {
     private UserRepo userRepo;
 
     @GetMapping("/registration")
-    public String registration(){
+    public String registration() {
         return "registration";
     }
 
     @PostMapping("/registration")
     public String addUser(User user, Map<String, Object> model) {
-        User userFromDB = userRepo.findByUsername(user.getUsername());
+        User userFromDb = userRepo.findByUsername(user.getUsername());
 
-        if (userFromDB != null){
-            model.put("message", "User exist!");
+        if (userFromDb != null) {
+            model.put("message", "User exists!");
             return "registration";
         }
+
         user.setActive(true);
         user.setRoles(Collections.singleton(Role.USER));
         userRepo.save(user);
+
         return "redirect:/login";
     }
-
 }
